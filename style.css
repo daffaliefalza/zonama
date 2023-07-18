@@ -1,0 +1,175 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(108, 117, 125);
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 500;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  max-width: 1200px;
+  width: 95%;
+  margin: 1.5rem auto;
+  background-color: #fff;
+  padding: 0.5rem 2rem;
+  border-radius: 15px;
+}
+
+/* header style*/
+
+header .center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+header .logo {
+  color: #000;
+  font-size: 2rem;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+header nav ul li a {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+/* header style end */
+
+/* produk kami style */
+main .produk-headline {
+  text-align: center;
+  width: 50%;
+  margin: 2rem auto;
+}
+
+main .produk-deskripsi {
+  margin: 1rem 0;
+}
+
+main .produk-card-wrapper {
+  display: grid;
+  gap: 30px;
+  align-items: start;
+  justify-content: center;
+  grid-template-columns: 300px 300px 300px;
+}
+
+main .produk-card {
+  border: 1px solid black;
+}
+
+main .produk-card h3 {
+  padding: 1rem 0.2rem;
+  border-bottom: 1px solid gray;
+}
+
+main .produk-card footer {
+  background-color: rgb(173, 178, 182);
+  padding: 1rem 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .order {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 0;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* produk kami style end */
+
+/* tentang kami style */
+section.tentang-kami {
+  margin-top: 5rem;
+  padding: 5rem 0;
+  text-align: center;
+  color: #fff;
+  background-color: rgb(108, 117, 125);
+}
+
+section.tentang-kami p {
+  margin: 0.8rem 0;
+  padding: 0 0.5rem;
+}
+/* tentang kami style end */
+
+/* cara order style */
+section.cara-order {
+  text-align: center;
+  padding: 3rem 0;
+  background-color: rgb(248, 249, 250);
+  border-bottom: 1px solid rgb(199, 206, 209);
+}
+
+section.cara-order p {
+  margin: 0.8rem 0;
+  padding: 0 0.5rem;
+}
+
+.footer {
+  padding: 1rem 0;
+  text-align: center;
+  position: relative;
+}
+
+.top {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  color: #000;
+}
+
+/* cara order style end */
+
+@media (max-width: 800px) {
+  header .center {
+    flex-direction: column;
+  }
+
+  main .produk-card-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  main .produk-card footer {
+    padding: 1rem 2rem;
+  }
+}

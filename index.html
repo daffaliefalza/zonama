@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" id="home">
+  <head>
+    <title>Zonama</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Zonama adalah toko buku nomor 1 dan terpercaya di indonesia"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="center">
+          <a href="#home" class="logo">Zonama.</a>
+          <nav>
+            <ul>
+              <li><a href="#produk-kami">Produk Kami</a></li>
+              <li><a href="#tentang-kami">Tentang Kami</a></li>
+              <li><a href="#cara-order">Cara Order</a></li>
+            </ul>
+          </nav>
+        </div>
+        <img
+          src="https://dirumahrafif.info/todana/images/banner.png"
+          alt="image banner"
+          class="banner"
+        />
+      </header>
+
+      <main>
+        <section class="produk-kami" id="produk-kami">
+          <div class="produk-headline">
+            <h1 class="produk-title">Our Product</h1>
+            <p class="produk-deskripsi">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+              modi maxime corrupti eum, harum inventore.
+            </p>
+          </div>
+          <div class="produk-card-wrapper">
+            <!-- getting data dynamic from javascript -->
+          </div>
+        </section>
+        <section class="tentang-kami" id="tentang-kami">
+          <h2>Tentang Kami</h2>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio
+            dolorum, eos alias laudantium consequuntur optio, voluptatum
+            accusamus cumque illo, iusto corporis veritatis sit eaque! Ipsam,
+            sapiente id. Ex vitae, iusto cumque aliquam saepe mollitia fugit
+            facilis soluta, a dolor quaerat.
+          </p>
+        </section>
+        <section class="cara-order" id="cara-order">
+          <h2>Cara Order</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente,
+            numquam. Ad quis iusto natus enim placeat, eligendi expedita
+            laboriosam! Dicta alias qui ipsam dolor dolorum quae tempore
+            praesentium, recusandae expedita!
+          </p>
+        </section>
+      </main>
+      <footer class="footer">
+        &copy; zonama - <i>Andi Daffa Liefalza</i>
+        <a class="top" href="#home">kembali ke atas</a>
+      </footer>
+    </div>
+
+    <script type="module">
+      import { data } from "./assets/data.js";
+      const produkWrapper = document.querySelector(".produk-card-wrapper");
+
+      const newData = data
+        .map((item) => {
+          return `  <div class="produk-card">
+              <img
+                src="${item.image}"
+                alt="${item.title}"
+              />
+              <h3>${item.title}</h3>
+              <footer>
+                <a class="order" href="https://wa.me/6281219364537?text=Halo kak, apakah produk ini tersedia?" target="_blank">Pesan Sekarang</a>
+                <span class="price">Rp. 51.000,00</span>
+              </footer>
+            </div>`;
+        })
+        .join("");
+
+      produkWrapper.innerHTML = newData;
+      const order = document.querySelectorAll(".order");
+
+      order.forEach((btn) => {
+        btn.addEventListener("click", (item) => {
+          //   const nohp = "62857123123";
+          //   let pesan = `https://api.whatsapp.com/send?phone=${nohp}&text=Halo Bang, saya mau pesan produk ini`;
+          //   item.href = pesan;
+        });
+      });
+    </script>
+  </body>
+</html>
